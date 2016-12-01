@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="test.html">
+    <button>back to the beginning</button>
+</a>
+<script>
+    function monthCalc(x, amount) {
+        var savePerMonth = parseFloat((amount / 12).toFixed(2));
+        var monthsPerYear = ['jan', 'feb', 'mar', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt,', 'nov', 'dec'];
+        if (months < 12) {
+            return savePerMonth + "<b>" + " mTG: " + monthsPerYear[(months++)] + "/" + year + "</b>";
+        } else {
+            months = 0
+            year = year + 1;
+            return savePerMonth + "<b>" + " mTG: " + monthsPerYear[(months++)] + "/" + year + "</b>";
+        }
+    }
+
+
+    var vandaag = new Date();
+    var months = vandaag.getMonth();
+    var year = vandaag.getFullYear();
+    var amount = parseFloat(prompt("Hoeveel geld wil je sparen?"));
+    var timeToSame = parseInt(prompt("Over hoeveel maanden hebt je het geld nodig"));
+    for (var x = 0; x < timeToSame; x++) {
+        document.write("<br>" + monthCalc(x, amount));
+
+    }
+</script>
+</body>
+</html>
